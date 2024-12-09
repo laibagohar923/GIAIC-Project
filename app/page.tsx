@@ -1,101 +1,285 @@
+
+
+"use client";
+
+import React from "react";
 import Image from "next/image";
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div>
+      {/* Hero Section */}
+      <section>
+        <h1 className="text-center font-bold">Hello Nike App</h1>
+        <p className="text-center ">Downlode the app to access everything Nike. Get Your Great</p>
+        <img
+          src="/images/shoes-image.png"
+          alt="shoes-image"
+          className="cover"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      </section>
+      <div>
+        <h1 className="text-center text-lg font-bold mt-6 ">First Look</h1>
+        <p className="text-center font-bold  text-5xl mt-6">NIKE AIR MAX PULES</p>
+        <p className="text-center mt-6">Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse <br></br>
+          —designed to push you past your limits and help you go to the max.</p>
+        <div className="flex justify-center mt-6">
+          <button className="bg-black  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
+            Notify Me
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+      </div>
+      {/* Best of Air Max Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-8">Best of Air Max</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Product Card 1 */}
+            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+              <img
+                src="/images/shoes2.png"
+                alt="shoes2"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Nike Air Max Pulse</h3>
+                <p className="text-gray-600">€180</p>
+                <p>Men's Shoes</p>
+              </div>
+            </div>
+            {/* Product Card 2 */}
+            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+              <img
+                src="/images/shoes3.png"
+                alt="shoes3"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Nike Air Max 97</h3>
+                <p className="text-gray-600">€170</p>
+                <p>Men's Shoes</p>
+              </div>
+            </div>
+            {/* Product Card 3 */}
+            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+              <img
+                src="/images/shoes4.png"
+                alt="shoes4"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Nike Air Max 270</h3>
+                <p className="text-gray-600">€160</p>
+                <p>Men's Shoes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Section */}
+
+      <div>
+        <img
+          src="/images/featured.jpeg"
+          alt="Featured"
+          className="mx-auto rounded-lg"
+        />
+        <h2 className="text-center font-bold  text-5xl mt-9">STEP INTO WHAT FEELS GOOD</h2>
+        <p className="mt-4 text-gray-600 text-center">
+          Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse <br></br>
+          —designed to push you past your limits and help you go to the max.
+        </p>
+        <div className="flex justify-center mt-6">
+          <button className="bg-black  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
+            Find Your Shoes
+          </button>
+        </div>
+      </div>
+      <div>
+
+        <h1 className="text-3xl md:text-4xl font-bold mt-8">Gear Up</h1>
+        {/* Product Slider */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Product 1 */}
+              <div className="shadow-md rounded-md overflow-hidden">
+                <img
+                  src="/images/pic2.png"
+                  alt="Pic2"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-semibold text-left">Nike Dri-FIT ADV Techknit </h3>
+                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-black font-bold ">₹ 2,995</p>
+                </div>
+              </div>
+
+              {/* Product 2 */}
+              <div className="shadow-md rounded-md overflow-hidden">
+                <img
+                  src="/images/pic1.png"
+                  alt="pic1"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-semibold">Nike Dri-FIT Challenger</h3>
+                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-black font-bold ">₹ 2,492</p>
+                </div>
+              </div>
+
+              {/* Product 3 */}
+              <div className="shadow-md rounded-md overflow-hidden">
+                <img
+                  src="/images/pic3.png"
+                  alt="Pic 3"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-semibold">Nike Dri-FIT ADV Division</h3>
+                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-black font-bold ">₹ 5295</p>
+                </div>
+              </div>
+
+              {/* Product 4 */}
+              <div className="shadow-md rounded-md overflow-hidden">
+                <img
+                  src="/images/pic4.png"
+                  alt="Pic4 4"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-semibold">Nike Fast</h3>
+                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-black font-bold ">₹ 3795</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        {/* Essentials Section */}
+
+        <h2 className="text-3xl font-bold text-left mt-20">Don't Miss</h2>
+        <section className="relative w-full h-[500px] md:h-[700px] bg-gray-200 overflow-hidden">
+          <img
+            src="/images/long.png"
+            alt="Main Showcase"
+            className="w-full h-full object-cover"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </section>
+        <div>
+          <h2 className="text-black text-3xl mt-7 md:text-6xl  mb-4 text-center">
+            Flight Essentials
+          </h2>
+          <p className="text-black   mb-6 text-center">
+            Your built-to-last, all-week wears – but with style only Jordan Brand can deliver.
+          </p>
+        </div>
+
+        {/* Essentials Grid */}
+        <section className="py-12">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mt-9">The Essentials</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Men's */}
+              <div className="relative overflow-hidden rounded-lg shadow-md">
+                <img
+                  src="/images/essentials-men.png"
+                  alt="Men's Essentials"
+                  className="w-full h-90 object-cover"
+                />
+                <button className="absolute bottom-4 left-4 bg-white text-black px-4 py-2 rounded-lg shadow-md">
+                  Men's
+                </button>
+              </div>
+
+              {/* Women's */}
+              <div className="relative overflow-hidden rounded-lg shadow-md">
+                <img
+                  src="/images/essentials-women.png"
+                  alt="Women's Essentials"
+                  className="w-full h-90 object-cover"
+                />
+                <button className="absolute bottom-4 left-4 bg-white text-black px-4 py-2 rounded-lg shadow-md">
+                  Women's
+                </button>
+              </div>
+
+              {/* Kids' */}
+              <div className="relative overflow-hidden rounded-lg shadow-md">
+                <img
+                  src="/images/essentials-kids.png"
+                  alt="Kids' Essentials"
+                  className="w-full h-90 object-cover"
+                />
+                <button className="absolute bottom-4 left-4 bg-white text-black px-4 py-2 rounded-lg shadow-md">
+                  Kids'
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* icons */}
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Icons */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold">Icons</h3>
+              <ul className="text-gray-600 space-y-2">
+                <li>Air Force 1</li>
+                <li>Huarache</li>
+                <li>Air Max 90</li>
+                <li>Air Max 95</li>
+              </ul>
+            </div>
+            {/* Shoes */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold">Shoes</h3>
+              <ul className="text-gray-600 space-y-2">
+                <li>All Shoes</li>
+                <li>Custom Shoes</li>
+                <li>Jordan Shoes</li>
+                <li>Running Shoes</li>
+              </ul>
+            </div>
+            {/* Clothing */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold">Clothing</h3>
+              <ul className="text-gray-600 space-y-2">
+                <li>All Clothing</li>
+                <li>Modest Wear</li>
+                <li>Hoodies & Pullovers</li>
+                <li>Shirts & Tops</li>
+              </ul>
+            </div>
+            {/* Kids */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold">Kids</h3>
+              <ul className="text-gray-600 space-y-2">
+                <li>Infant & Toddler Shoes</li>
+                <li>Kids' Shoes</li>
+                <li>Kids' Jordan Shoes</li>
+                <li>Kids' Basketball Shoes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
-}
+};
+
+export default HomePage;
