@@ -1,16 +1,11 @@
 
 
 
-
-
-
-
-
-
-// components/GetHelp.tsx
 import React from "react";
+import { FaMobileAlt, FaCommentDots, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 
-const GetHelp: React.FC = () => {
+const HelpSectionWithContact: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto p-6 md:p-12 bg-white">
       {/* Header Section */}
@@ -20,11 +15,9 @@ const GetHelp: React.FC = () => {
           <input
             type="text"
             placeholder="What can we help you with?"
-            className="w-full border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-80 max-w-lg mx-auto px-2 py-2 border border-gray-300 rounded-md "
           />
-          <button className="absolute right-2 top-2 text-gray-500 hover:text-black">
-            🔍
-          </button>
+
         </div>
       </div>
 
@@ -32,16 +25,16 @@ const GetHelp: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Section */}
         <div>
-          <h2 className="font-bold text-xl mb-4">WHAT PAYMENT OPTIONS CAN I USE ON NIKE ODERS?</h2>
-          <p className="text-gray-700 text-sm mb-4">
+          <h2 className="font-bold text-xl mb-4  ">WHAT PAYMENT OPTIONS CAN I USE ON NIKE ODERS?</h2>
+          <p className="text-gray-700 text-sm mb-4 mt-6">
             We want to make buying your favorite Nike shoes and gear online fast and easy, and we accept the following payment options:
           </p>
-          <ul className="list-disc list-inside mb-4 text-sm text-gray-700">
-            <li>Visa, Mastercard, Diners Club, Discover, American Express, Visa Electron, Maestro</li>
-            <li>Apple Pay</li>
-            <li>PayTM or a local credit or debit card</li>
+          <ul className="list-disc list-inside mb-4 text-sm text-gray-700 mt-6">
+            <li className="mt-3">Visa, Mastercard, Diners Club, Discover, American Express, Visa Electron, Maestro</li>
+            <li className="mt-3">Apple Pay</li>
+            <li className="mt-3">PayTM or a local credit or debit card</li>
           </ul>
-          <h1 className="font-bold">Nike Member</h1>
+          <h1 className="font-bold mt-7">Nike Member</h1>
           <p className="text-gray-700 mb-4">
             can store multiple debit or credit cards in their profile for faster checkout. If you're not already a Member, join us today.
           </p>
@@ -55,16 +48,16 @@ const GetHelp: React.FC = () => {
           </div>
           {/* FAQs */}
 
-          <div className="max-w-4xl mx-auto px-6 md:px-12 py-8 ">
-            <h2 className="text-2xl font-bold mb-6">FAQs</h2>
+          <div>
+            <h2 className="text-2xl font-bold mb-6 ">FAQs</h2>
             <div className="space-y-4">
               {/* FAQ 1 */}
               <div>
                 <p className="font-semibold text-gray-800">
                   Does my card need international purchases enabled?
                 </p>
-                <p className="text-gray-700 text-sm">
-                  Yes, we recommend asking your bank to enable international purchases on your card. You will be notified at checkout if international purchases need to be enabled.
+                <p className="text-gray-700 text-sm mt-3">
+                  Yes, we recommend asking your bank to enable international purchases on your card.<br></br> You will be notified at checkout if international purchases need to be enabled.
                 </p>
                 <br></br>
                 <p className="text-gray-700 text-sm">
@@ -84,7 +77,7 @@ const GetHelp: React.FC = () => {
 
               {/* FAQ 3 */}
               <div>
-                <p className="font-semibold text-gray-800">
+                <p className="font-semibold text-gray-800 mt-7" >
                   What payment method is accepted for SNKRS orders?
                 </p>
                 <p className="text-gray-700 text-sm">
@@ -94,7 +87,7 @@ const GetHelp: React.FC = () => {
 
               {/* FAQ 4 */}
               <div>
-                <p className="font-semibold text-gray-800">
+                <p className="font-semibold text-gray-800 mt-7">
                   Why don’t I see Apple Pay as an option?
                 </p>
                 <p className="text-gray-700 text-sm">
@@ -104,45 +97,67 @@ const GetHelp: React.FC = () => {
             </div>
 
             {/* "Was this helpful?" Section */}
-            <div className="mt-8 border-t pt-6">
-              <p className="text-gray-800 font-semibold mb-4">Was this answer helpful?</p>
-              <div className="flex items-center gap-4">
-                <button className="text-gray-600 hover:text-black flex items-center gap-2">
-                  👍 <span>Yes</span>
-                </button>
-                <button className="text-gray-600 hover:text-black flex items-center gap-2">
-                  👎 <span>No</span>
-                </button>
+            <div>
+              <div className="mb-4 mt-6">
+                <p className="text-sm font-semibold">Was this answer helpful?</p>
+                <div className="flex space-x-4 mt-2">
+                  <FaThumbsUp className="text-lg cursor-pointer hover:text-blue-500" />
+                  <FaThumbsDown className="text-lg cursor-pointer hover:text-red-500" />
+                </div>
               </div>
-            </div>
 
-            {/* Related Links */}
-            <div className="mt-8">
-              <h3 className="text-lg text-gray-400 font-semibold mb-4">RELATED</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-black hover:underline"
-                  >
-                    WHAT ARE NIKE’S DELIVERY OPTIONS?
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-black hover:underline"
-                  >
+              {/* Related Links */}
+              <div className="mt-4">
+                <p className="text-sm font-bold mb-2 text-gray-500">RELATED</p>
+                <ul className="space-y-1">
+                  <li className="text-black font-bold underline cursor-pointer hover:text-blue-700">
+                    WHAT ARE NIKE'S DELIVERY OPTIONS?
+                  </li>
+                  <li className="text-black underline font-bold cursor-pointer hover:text-blue-700">
                     HOW DO I GET FREE DELIVERY ON NIKE ORDERS?
-                  </a>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        {/* Right Section: Contact Information */}
+        <div>
+          <h2 className="text-center text-xl font-bold mb-8">CONTACT US</h2>
+          <div className="flex flex-col items-center space-y-8">
+            {/* Mobile Icon */}
+            <div className="text-center">
+              <FaMobileAlt className="mx-auto text-5xl mb-2" />
+              <p className="font-semibold">000 800 919 0566</p>
+              <p>Products & Orders: 24 hours a day,<br></br> 7 days a week</p>
+              <p>Company Info & Enquiries: 07:30 - 16:30, <br></br> Monday - Friday</p>
+            </div>
+
+            {/* Chat */}
+            <div className="text-center">
+              <FaCommentDots className="mx-auto text-5xl mb-2 mt-7" />
+              <p className="font-bold mt-5">24 hours a day</p>
+              <p>7 days a week</p>
+            </div>
+
+            {/* Email */}
+            <div className="text-center">
+              <FaEnvelope className="mx-auto text-5xl mb-2 mt-7" />
+              <p className="font-bold mt-5">We’ll reply within</p>
+              <p>five business days</p>
+            </div>
+
+            {/* Store Locator */}
+            <div className="text-center">
+              <FaMapMarkerAlt className="mx-auto text-5xl mb-2 mt-7" />
+              <p className="font-bold mt-5">STORE LOCATOR</p>
+              <p>Find Nike retail stores near you</p>
+            </div>
+          </div>
+        </div>
+      </div >
+    </div >
   );
 };
 
-export default GetHelp;
+export default HelpSectionWithContact;

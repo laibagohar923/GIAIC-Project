@@ -1,6 +1,6 @@
 
 
-"use client";
+
 
 import React from "react";
 import Image from "next/image";
@@ -11,7 +11,14 @@ const HomePage = () => {
       {/* Hero Section */}
       <section>
         <h1 className="text-center font-bold">Hello Nike App</h1>
-        <p className="text-center ">Downlode the app to access everything Nike. Get Your Great</p>
+        <p className="text-center text-sm">
+          Download the app to access everything Nike.
+          <span className="relative">
+            Get Your Great
+            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-black"></span>
+          </span>
+        </p>
+
         <img
           src="/images/shoes-image.png"
           alt="shoes-image"
@@ -24,8 +31,11 @@ const HomePage = () => {
         <p className="text-center mt-6">Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse <br></br>
           —designed to push you past your limits and help you go to the max.</p>
         <div className="flex justify-center mt-6">
-          <button className="bg-black  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
+          <button className="bg-black mr-6  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
             Notify Me
+          </button>
+          <button className="bg-black  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
+            Shop Air Max
           </button>
         </div>
 
@@ -176,12 +186,17 @@ const HomePage = () => {
           />
         </section>
         <div>
-          <h2 className="text-black text-3xl mt-7 md:text-6xl  mb-4 text-center">
-            Flight Essentials
+          <h2 className="text-center font-bold  text-5xl mt-9">
+          FLIGHT ESSENTIALS
           </h2>
           <p className="text-black   mb-6 text-center">
             Your built-to-last, all-week wears – but with style only Jordan Brand can deliver.
           </p>
+          <div className="flex justify-center mt-6">
+          <button className="bg-black  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
+            Find Your Shoes
+          </button>
+        </div>
         </div>
 
         {/* Essentials Grid */}

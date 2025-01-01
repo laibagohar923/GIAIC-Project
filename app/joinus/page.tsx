@@ -13,8 +13,8 @@ const RegisterForm: React.FC = () => {
             className="mx-auto w-12"
           />
           <h1 className="text-2xl font-bold mt-4">BECOME A NIKE MEMBER</h1>
-          <p className="text-center text-sm text-gray-400 mb-8">
-            Create your Nike Member profile and get <br></br>first access to the very best of Nike <br></br>products, inspiration and community.
+          <p className=" text-sm text-gray-400 mb-8 mt-6 text-balance">
+            Create your Nike Member profile and get first <br></br> access to the very best of Nike products, inspiration <br></br> and community.
           </p>
         </div>
 

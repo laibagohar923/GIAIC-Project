@@ -1,10 +1,15 @@
-"use client";
 
-import React from "react";
+
+
+'use client';
+
+import React, { useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { AiOutlineDown } from "react-icons/ai";
-import Link from "next/link";
-const products = [
+
+const products: any[] = [
+  
+  
   {
     id: 1,
     tag: "Just In",
@@ -191,7 +196,7 @@ const products = [
     image: "/images/nike16.png",
   },
   {
-    id: 3,
+    id: 24,
     tag: "Just In",
     name: "Nike Dri-FIT Challenger",
     category: "Men's 18cm (approx.) 2-in-1 Versatile Shorts",
@@ -199,7 +204,7 @@ const products = [
     image: "/images/men9.png",
   },
   {
-    id: 3,
+    id: 25,
     tag: "Just In",
     name: "Jordan Series ES",
     category: "Men's Shoes",
@@ -207,7 +212,7 @@ const products = [
     image: "/images/men10.png",
   },
   {
-    id: 3,
+    id: 26,
     tag: "Just In",
     name: "Nike Outdoor Play",
     category: "Older Kids' Oversized Woven Jacket",
@@ -215,7 +220,7 @@ const products = [
     image: "/images/nike17.png",
   },
   {
-    id: 3,
+    id: 27,
     tag: "Just In",
     name: "Nike Sportswear Trend",
     category: "Older Kids' (Girls') High-waisted Woven Shorts",
@@ -223,7 +228,7 @@ const products = [
     image: "/images/men12.jpeg",
   },
   {
-    id: 3,
+    id: 28,
     tag: "Just In",
     name: "Nike Blazer Low '77 Jumbo",
     category: "Women's Shoes",
@@ -231,7 +236,7 @@ const products = [
     image: "/images/men11.png",
   },
   {
-    id: 3,
+    id: 29,
     tag: "Just In",
     name: "Nike SB Force 58",
     category: "Skate Shoe",
@@ -239,62 +244,32 @@ const products = [
     image: "/images/nike18.png",
   },
   {
-    id: 3,
+    id: 30,
     tag: "Just In",
     name: "Nike Standard Issue",
     category: "Women's Basketball Jersey",
     price: "₹2,895.00",
     image: "/images/nike19.png",
   },
-
 ];
 
-<section>
-  <div className="bg-white min-h-screen">
-    <div className="container mx-auto px-4 py-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white border rounded-lg shadow hover:shadow-md transition-shadow"
-          >
-            {/* Image Section */}
-            <div className="h-[520px] w-full overflow-hidden">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-120 object-cover rounded-t-lg"
-              />
-            </div>
-            {/* Content Section */}
-            <div className="p-4">
-              <span className="text-orange-500 text-sm font-semibold">
-                {product.tag}
-              </span>
-              <h3 className="font-bold text-lg text-gray-900 mt-2">
-                {product.name}
-              </h3>
-              <p className="text-sm text-gray-600">{product.category}</p>
-              <p className="text-gray-900 font-semibold mt-3">
-                MRP: {product.price}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-
 const ProductPage: React.FC = () => {
+  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+
+  const openModal = (product: any) => {
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-wrap md:flex-nowrap">
           {/* Sidebar Filters */}
-          <aside className="w-full md:w-64  overflow-y-auto border-r p-4">
-            {/* Filter Header */}
+          <aside className="w-full md:w-64 overflow-y-auto border-r p-4 bg-gray-50">
             <div className="flex items-center justify-between border-b pb-2">
               <h2 className="text-xl font-bold">Filters</h2>
               <FaFilter size={20} />
@@ -302,7 +277,7 @@ const ProductPage: React.FC = () => {
 
             {/* Categories Section */}
             <div className="mt-4">
-              <h3 className="text-lg font-semibold">New (500)</h3>
+              <h3 className="text-lg font-semibold">Categories</h3>
               <ul className="mt-2 space-y-2 text-gray-700">
                 <li>Shoes</li>
                 <li>Sports Bras</li>
@@ -340,28 +315,9 @@ const ProductPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Kids Section */}
-            <div className="mt-6">
-              <h3 className="flex items-center justify-between text-lg font-semibold">
-                Kids <AiOutlineDown />
-              </h3>
-              <div className="mt-2 space-y-2">
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span>Boys</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span>Girls</span>
-                </label>
-              </div>
-            </div>
-
             {/* Shop by Price Section */}
             <div className="mt-6">
-              <h3 className="flex items-center justify-between text-lg font-semibold">
-                Shop by Price <AiOutlineDown />
-              </h3>
+              <h3 className="text-lg font-semibold">Shop by Price</h3>
               <div className="mt-2 space-y-2">
                 <label className="flex items-center space-x-2">
                   <input type="checkbox" className="w-4 h-4" />
@@ -381,9 +337,9 @@ const ProductPage: React.FC = () => {
               {products.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white border rounded-lg shadow hover:shadow-md transition-shadow"
+                  className="bg-white border rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer"
+                  onClick={() => openModal(product)}
                 >
-                  {/* Image Section */}
                   <div className="w-full h-64 flex items-center justify-center overflow-hidden rounded-t-lg bg-gray-100">
                     <img
                       src={product.image}
@@ -391,7 +347,6 @@ const ProductPage: React.FC = () => {
                       className="h-full object-contain"
                     />
                   </div>
-                  {/* Content Section */}
                   <div className="p-4">
                     <span className="text-orange-500 text-sm font-semibold">
                       {product.tag}
@@ -410,12 +365,249 @@ const ProductPage: React.FC = () => {
           </main>
         </div>
       </div>
-    </div>
 
+      {/* Modal */}
+      {selectedProduct && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white p-6 rounded-lg w-11/12 sm:w-3/4 lg:w-1/2 max-w-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-xl font-bold">{selectedProduct.name}</h2>
+            <img
+              src={selectedProduct.image}
+              alt={selectedProduct.name}
+              className="w-full h-60 object-contain mt-4 mb-4"
+            />
+            <p className="text-gray-600">{selectedProduct.category}</p>
+            <p className="text-gray-900 font-semibold mt-3">
+              Price: {selectedProduct.price}
+            </p>
+            <button
+              className="mt-6 text-white bg-orange-500 px-4 py-2 rounded-lg"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
 export default ProductPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
