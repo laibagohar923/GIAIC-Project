@@ -34,7 +34,7 @@ export default function FindStorePage() {
     <div className="flex flex-col lg:flex-row h-screen">
       {/* Sidebar */}
       <div className="w-full lg:w-1/4 p-6  overflow-y-auto border-r border-gray-300">
-        <h1 className="text-2xl font-bold mb-6">Find a Nike Store</h1>
+        <h1 className="text-2xl font-bold mb-6 text-black">Find a Nike Store</h1>
         <input
           type="text"
           placeholder="Search Location"

@@ -2,28 +2,31 @@
 
 import React from "react";
 import Image from "next/image";
+
 const LoginForm = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-
-
+        {/* Logo Section */}
         <Image
           src="/images/logonike.jpg"
           alt="Nike Product"
-          width={90} 
-          height={90} 
-          className="mx-auto w-17"
+          width={90}
+          height={90}
+          className="mx-auto"
         />
-        <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
-          YOUR ACCOUNT FOR <br></br>EVERYTHING <br></br> NIKE
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+          YOUR ACCOUNT FOR <br /> EVERYTHING <br /> NIKE
         </h2>
+
+        {/* Form Section */}
         <form>
           <div className="mb-4">
             <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
+
             </label>
             <input
               type="email"
@@ -37,6 +40,7 @@ const LoginForm = () => {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
             >
+
             </label>
             <input
               type="password"
@@ -51,10 +55,13 @@ const LoginForm = () => {
               Keep me signed in
             </label>
             <a href="#" className="text-sm text-gray-400 hover:underline">
-  Forgot your password?
-</a>
+              Forgot your password?
+            </a>
           </div>
-          <p className="text-gray-400 text-sm text-center mt-6 ">By logging in, you agree to Nikes Privacy Policy <br></br> and Terms  of Use</p>
+          <p className="text-gray-400 text-sm text-center mt-6">
+            By logging in, you agree to Nikes Privacy Policy <br />
+            and Terms of Use
+          </p>
           <button
             type="submit"
             className="w-full py-2 px-4 bg-black text-white rounded-md hover:bg-gray-400 transition duration-200 mt-6"
@@ -62,7 +69,7 @@ const LoginForm = () => {
             SIGN IN
           </button>
         </form>
-        <p className="text-sm text-center text-gray-400 mt-4">
+        <p className="text-sm text-center text-gray-500 mt-4">
           Not a Member?{" "}
           <a href="#" className="text-black hover:underline">
             Join Us

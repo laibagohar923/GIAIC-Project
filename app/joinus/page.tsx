@@ -17,7 +17,7 @@ const RegisterForm: React.FC = () => {
             height={90} 
             className="mx-auto w-17"
           />
-          <h1 className="text-2xl font-bold mt-4">BECOME A NIKE MEMBER</h1>
+          <h1 className="text-2xl font-bold mt-4 text-black">BECOME A NIKE MEMBER</h1>
           <p className=" text-sm text-gray-400 mb-8 mt-6 text-balance">
             Create your Nike Member profile and get first <br></br> access to the very best of Nike products, inspiration <br></br> and community.
           </p>
@@ -89,13 +89,13 @@ const RegisterForm: React.FC = () => {
             </p>
           </div>
 
-          <p className="text-xs text-gray-500 mt-2 text-center  text-gray-400 ">
+          <p className="text-xs mt-2 text-center  text-gray-400 ">
             By creating an account, you agree to <br></br>{" "}
             <a href="#" className="text-gray-400 underline">
               Privacy Policy
             </a>{" "}
             and{" "}
-            <a href="#" className="text-gray-400 underline text-gray-400">
+            <a href="#" className="text-gray-400 underline">
               Terms of Use
             </a>
             .

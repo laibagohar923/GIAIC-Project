@@ -279,14 +279,14 @@ const ProductPage: React.FC = () => {
           {/* Sidebar Filters */}
           <aside className="w-full md:w-64 overflow-y-auto border-r p-4 bg-gray-50">
             <div className="flex items-center justify-between border-b pb-2">
-              <h2 className="text-xl font-bold">Filters</h2>
+              <h2 className="text-xl font-bold  text-black">Filters</h2>
               <FaFilter size={20} />
             </div>
 
             {/* Categories Section */}
             <div className="mt-4">
-              <h3 className="text-lg font-semibold">Categories</h3>
-              <ul className="mt-2 space-y-2 text-gray-700">
+              <h3 className="text-lg font-semibold  text-black">Categories</h3>
+              <ul className="mt-2 space-y-2 text-black">
                 <li>Shoes</li>
                 <li>Sports Bras</li>
                 <li>Tops & T-Shirts</li>

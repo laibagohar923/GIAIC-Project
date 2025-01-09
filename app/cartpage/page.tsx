@@ -1,4 +1,3 @@
-
 "use client"; // This ensures the file is treated as a client component.
 
 import { useRouter } from "next/navigation"; // Use the correct router from "next/navigation"
@@ -12,13 +11,12 @@ const CartPage: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-full">
       {/* Free Delivery Banner */}
-      <div>
-        <div className="container mx-auto px-6 text-left mt-8 text-sm text-gray-800 bg-gray-200 py-5">
-          <span className="font-semibold">Free Delivery <br></br></span> Applies to orders of over ₹14,000.00 or more.{" "}
-          <a href="#" className="text-black font-bold underline">
-            View details
-          </a>
-        </div>
+      <div className="container mx-auto px-6 text-left mt-8 text-sm text-gray-800 bg-gray-200 py-5">
+        <span className="font-semibold">Free Delivery <br /></span> 
+        Applies to orders of over ₹14,000.00 or more.{" "}
+        <a href="#" className="text-black font-bold underline">
+          View details
+        </a>
       </div>
 
       {/* Main Content */}
@@ -31,13 +29,13 @@ const CartPage: React.FC = () => {
             {/* Product Item 1 */}
             <div className="flex items-center justify-between border-b pb-4 mb-6">
               <div className="flex gap-4">
-                <Image
-                  src="/images/cart1.jpg"
-                  alt="Nike Product"
-                  width={80} // w-20 corresponds to 80px
-                  height={80} // h-20 corresponds to 80px
-                  className="object-cover"
-                />
+              <Image
+  src="/images/cart1.jpg"
+  alt="Nike Product"
+  width={100}
+  height={100}
+  className="w-20 h-20 object-contain rounded-md"
+/>
 
                 <div>
                   <p className="font-semibold text-gray-800">
@@ -49,11 +47,10 @@ const CartPage: React.FC = () => {
                   <p className="text-gray-500 text-sm mt-3">
                     Ashen Slate/Cobalt Bliss
                   </p>
-                  <p className="text-gray-500 text-sm mt-4">
-                    <div className="text-sm font-medium">
-                      Size: <span className="font-bold">L</span>&nbsp;&nbsp;&nbsp;&nbsp; Quantity: <span className="font-bold">1</span>
-                    </div>
-                  </p>
+                  <div className="text-sm font-medium mt-4">
+                    Size: <span className="font-bold">L</span> &nbsp;&nbsp; 
+                    Quantity: <span className="font-bold">1</span>
+                  </div>
                 </div>
               </div>
               <div className="text-gray-800 font-semibold">MRP: ₹ 3,895.00</div>
@@ -71,13 +68,14 @@ const CartPage: React.FC = () => {
             {/* Product Item 2 */}
             <div className="flex items-center justify-between border-b pb-4 mb-6">
               <div className="flex gap-4">
-                <Image
-                  src="/images/nike3.png"
-                  alt="Nike Product"
-                  width={80} // w-20 corresponds to 80px
-                  height={80} // h-20 corresponds to 80px
-                  className="object-cover"
-                />
+              <Image
+  src="/images/nike3.png"
+  alt="Nike Product"
+  width={100}
+  height={100}
+  className="w-20 h-20 object-contain rounded-md"
+/>
+
                 <div>
                   <p className="font-semibold text-gray-800">
                     Nike Air Max 97 SE
@@ -86,12 +84,10 @@ const CartPage: React.FC = () => {
                   <p className="text-gray-500 text-sm mt-3">
                     Flat Pewter/Light Bone/Black/White
                   </p>
-                  <p className="text-gray-500 text-sm mt-3">
-                    <div className="text-sm font-medium">
-                      Size: <span className="font-bold">L</span>&nbsp;&nbsp;&nbsp;&nbsp; Quantity: <span className="font-bold">1</span>
-                    </div>
-
-                  </p>
+                  <div className="text-sm font-medium mt-4">
+                    Size: <span className="font-bold">L</span> &nbsp;&nbsp; 
+                    Quantity: <span className="font-bold">1</span>
+                  </div>
                 </div>
               </div>
               <div className="text-gray-800 font-semibold">MRP: ₹ 16,995.00</div>
@@ -126,7 +122,7 @@ const CartPage: React.FC = () => {
                 </div>
               </div>
               <button
-                onClick={() => router.push("/checkout")} // Navigate to Checkout Page
+                onClick={() => router.push("/checkout")}
                 className="w-full mt-6 py-2 bg-black text-white font-semibold rounded hover:bg-gray-800"
               >
                 Member Checkout

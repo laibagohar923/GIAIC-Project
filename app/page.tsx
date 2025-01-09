@@ -46,7 +46,7 @@ const HomePage = () => {
       {/* Best of Air Max Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Best of Air Max</h2>
+          <h2 className="text-3xl font-bold mb-8  text-black">Best of Air Max</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Product Card 1 */}
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
@@ -59,9 +59,9 @@ const HomePage = () => {
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-bold">Nike Air Max Pulse</h3>
+                <h3 className="text-lg font-bold text-black">Nike Air Max Pulse</h3>
                 <p className="text-gray-600">€180</p>
-                <p>Mens Shoes</p>
+                <p className=" text-black">Mens Shoes</p>
               </div>
             </div>
             {/* Product Card 2 */}
@@ -75,9 +75,9 @@ const HomePage = () => {
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-bold">Nike Air Max 97</h3>
+                <h3 className="text-lg font-bold  text-black">Nike Air Max 97</h3>
                 <p className="text-gray-600">€170</p>
-                <p>Mens Shoes</p>
+                <p className=" text-black">Mens Shoes</p>
               </div>
             </div>
             {/* Product Card 3 */}
@@ -91,9 +91,9 @@ const HomePage = () => {
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-bold">Nike Air Max 270</h3>
+                <h3 className="text-lg font-bold  text-black">Nike Air Max 270</h3>
                 <p className="text-gray-600">€160</p>
-                <p>Mens Shoes</p>
+                <p className=" text-black">Mens Shoes</p>
               </div>
             </div>
           </div>
@@ -208,16 +208,17 @@ const HomePage = () => {
         {/* Essentials Section */}
 
         <h2 className="text-3xl font-bold text-left mt-20">Dont Miss</h2>
-        <section className="relative w-full h-[500px] md:h-[700px] bg-gray-200 overflow-hidden">
+        <section>
 
           <Image
             src="/images/long.png"
             alt="Featured"
             layout="responsive"
-            width={100} // Ratio set karne ke liye
-            height={100}
+            width={1000} // Image ki original width ko set karen
+            height={500} // Image ki original height ko set karen
             className="object-cover"
           />
+
         </section>
         <div>
           <h2 className="text-center font-bold  text-5xl mt-9">
