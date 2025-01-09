@@ -4,6 +4,7 @@
 import { useRouter } from "next/navigation"; // Use the correct router from "next/navigation"
 import React from "react";
 import { FiHeart, FiTrash2 } from "react-icons/fi";
+import Image from "next/image";
 
 const CartPage: React.FC = () => {
   const router = useRouter(); // Initialize the router
@@ -30,23 +31,28 @@ const CartPage: React.FC = () => {
             {/* Product Item 1 */}
             <div className="flex items-center justify-between border-b pb-4 mb-6">
               <div className="flex gap-4">
-                <img
+                <Image
                   src="/images/cart1.jpg"
                   alt="Nike Product"
-                  className="w-20 h-20 object-cover"
+                  width={80} // w-20 corresponds to 80px
+                  height={80} // h-20 corresponds to 80px
+                  className="object-cover"
                 />
+
                 <div>
                   <p className="font-semibold text-gray-800">
                     Nike Dri-FIT ADV TechKnit Ultra
                   </p>
                   <p className="text-gray-500 text-sm mt-3">
-                    Men's Short-Sleeve Running Top
+                    Mens Short-Sleeve Running Top
                   </p>
                   <p className="text-gray-500 text-sm mt-3">
                     Ashen Slate/Cobalt Bliss
                   </p>
                   <p className="text-gray-500 text-sm mt-4">
-                    Size: L &nbsp;&nbsp; &nbsp; &nbsp; Quantity: 1
+                    <div className="text-sm font-medium">
+                      Size: <span className="font-bold">L</span>&nbsp;&nbsp;&nbsp;&nbsp; Quantity: <span className="font-bold">1</span>
+                    </div>
                   </p>
                 </div>
               </div>
@@ -65,21 +71,26 @@ const CartPage: React.FC = () => {
             {/* Product Item 2 */}
             <div className="flex items-center justify-between border-b pb-4 mb-6">
               <div className="flex gap-4">
-                <img
+                <Image
                   src="/images/nike3.png"
                   alt="Nike Product"
-                  className="w-20 h-20 object-cover"
+                  width={80} // w-20 corresponds to 80px
+                  height={80} // h-20 corresponds to 80px
+                  className="object-cover"
                 />
                 <div>
                   <p className="font-semibold text-gray-800">
                     Nike Air Max 97 SE
                   </p>
-                  <p className="text-gray-500 text-sm mt-3">Men's Shoes</p>
+                  <p className="text-gray-500 text-sm mt-3">Mens Shoes</p>
                   <p className="text-gray-500 text-sm mt-3">
                     Flat Pewter/Light Bone/Black/White
                   </p>
                   <p className="text-gray-500 text-sm mt-3">
-                    Size: 8 &nbsp;&nbsp; &nbsp; &nbsp; Quantity: 1
+                    <div className="text-sm font-medium">
+                      Size: <span className="font-bold">L</span>&nbsp;&nbsp;&nbsp;&nbsp; Quantity: <span className="font-bold">1</span>
+                    </div>
+
                   </p>
                 </div>
               </div>

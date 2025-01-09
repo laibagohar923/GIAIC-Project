@@ -1,15 +1,23 @@
 
 
-
 'use client';
 
 import React, { useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { AiOutlineDown } from "react-icons/ai";
+import Image from "next/image";
 
-const products: any[] = [
-  
-  
+// Define a specific type for the products
+interface Product {
+  id: number;
+  tag: string;
+  name: string;
+  category: string;
+  price: string;
+  image: string;
+}
+
+const products: Product[] = [
   {
     id: 1,
     tag: "Just In",
@@ -33,7 +41,6 @@ const products: any[] = [
     category: "Women's Basketball Jersey",
     price: "₹2,895.00",
     image: "/images/nike3.png",
-  
   },
   {
     id: 4,
@@ -254,9 +261,10 @@ const products: any[] = [
 ];
 
 const ProductPage: React.FC = () => {
-  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  // Replace `any` with `Product` type in useState
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const openModal = (product: any) => {
+  const openModal = (product: Product) => {
     setSelectedProduct(product);
   };
 
@@ -341,10 +349,13 @@ const ProductPage: React.FC = () => {
                   onClick={() => openModal(product)}
                 >
                   <div className="w-full h-64 flex items-center justify-center overflow-hidden rounded-t-lg bg-gray-100">
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.name}
                       className="h-full object-contain"
+                      width={500} // specify the width
+                      height={500} // specify the height
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-4">
@@ -377,11 +388,16 @@ const ProductPage: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-xl font-bold">{selectedProduct.name}</h2>
-            <img
+
+            <Image
               src={selectedProduct.image}
               alt={selectedProduct.name}
               className="w-full h-60 object-contain mt-4 mb-4"
+              width={500} // specify the width
+              height={500} // specify the height
+              loading="lazy"
             />
+
             <p className="text-gray-600">{selectedProduct.category}</p>
             <p className="text-gray-900 font-semibold mt-3">
               Price: {selectedProduct.price}
@@ -400,73 +416,6 @@ const ProductPage: React.FC = () => {
 };
 
 export default ProductPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

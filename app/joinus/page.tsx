@@ -1,16 +1,21 @@
-
+"use client";
 
 import React from "react";
+import Image from "next/image";
 
 const RegisterForm: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-md p-8 bg-white shadow-md rounded-lg border border-gray-200">
         <div className="text-center mb-8">
-          <img
-            src="/images/logonike.jpg" // Replace with your logo path
-            alt="Nike Logo"
-            className="mx-auto w-12"
+       
+
+          <Image
+            src="/images/logonike.jpg"
+            alt="Nike Product"
+            width={90} 
+            height={90} 
+            className="mx-auto w-17"
           />
           <h1 className="text-2xl font-bold mt-4">BECOME A NIKE MEMBER</h1>
           <p className=" text-sm text-gray-400 mb-8 mt-6 text-balance">

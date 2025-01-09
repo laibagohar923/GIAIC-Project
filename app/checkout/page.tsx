@@ -5,6 +5,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const CheckoutPage: React.FC = () => {
   return (
@@ -15,21 +16,27 @@ const CheckoutPage: React.FC = () => {
           <div className="w-full max-w-md text-center">
             <h2 className="text-2xl font-semibold mb-6">How would you like to get your order?</h2>
             <p className="text-sm text-gray-400 mb-4 text-start">
-              Customs regulation for India requires a copy of the recipient's KYC. The address on the KYC needs to match the shipping address. Our courier will contact you via SMS/email to obtain a copy of your KYC. The KYC will be stored securely and used solely for the purpose of clearing customs (including sharing it with customs officials) for all orders and returns. If your KYC does not match your shipping address, please click the link for more information.{" "}
+              Customs regulation for India requires a copy of the recipients
+              KYC. The address on the KYC needs to match the shipping address.
+              Our courier will contact you via SMS/email to obtain a copy of
+              your KYC. The KYC will be stored securely and used solely for the
+              purpose of clearing customs (including sharing it with customs
+              officials) for all orders and returns. If your KYC does not match
+              your shipping address, please click the link for more information.{" "}
               <a href="#" className="text-gray-400 underline">
                 Learn More
               </a>
             </p>
-
             {/* Delivery Button */}
             <div className="mb-8">
               <button className="w-full border-2 px-6 py-5 mt-7 border-black hover:bg-gray-100 rounded-lg">
                 <p className="font-semibold text-left">Deliver It</p>
               </button>
             </div>
-
             {/* Address Form */}
-            <h3 className="text-lg font-semibold mb-4 text-left">Enter your name and address:</h3>
+            <h3 className="text-lg font-semibold mb-4 text-left">
+              Enter your name and address:
+            </h3>
             <form className="space-y-4 ">
               <div className="mt-7 ">
                 <input
@@ -67,7 +74,6 @@ const CheckoutPage: React.FC = () => {
                 <input
                   type="text"
                   placeholder="Locality"
-
                   className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black font-bold"
                 />
                 <input
@@ -90,7 +96,9 @@ const CheckoutPage: React.FC = () => {
                   type="checkbox"
                   className="w-5 h-5 mt-5 text-gray-600 border-gray-300 rounded focus:ring-gray-500 focus:ring-2"
                 />
-                <p className="text-left font-semibold ml-3 mt-5"> Save this address to my profile</p>
+                <p className="text-left font-semibold ml-3 mt-5">
+                  Save this address to my profile
+                </p>
               </div>
               {/* Second Checkbox */}
               <div className="flex items-center">
@@ -99,12 +107,16 @@ const CheckoutPage: React.FC = () => {
                   type="checkbox"
                   className="w-5 h-5  rounded focus:ring-gray-500 focus:ring-2"
                 />
-                <p className="text-left font-semibold ml-3 ">Make this my preferred address</p>
+                <p className="text-left font-semibold ml-3 ">
+                  Make this my preferred address
+                </p>
               </div>
             </div>
             {/* What's your Contact Information? */}
             <div className="text-left">
-              <h3 className="text-2xl font-bold mb-4 mt-7">What's your contact information?</h3>
+              <h3 className="text-2xl font-bold mb-4 mt-7">
+                Whats your contact information?
+              </h3>
             </div>
             <div className="space-y-4">
               <div>
@@ -114,7 +126,9 @@ const CheckoutPage: React.FC = () => {
                   placeholder="Email"
                   className="border border-gray-300 text-black rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black font-bold"
                 />
-                <p className="text-sm text-black mt-1 text-left">A confirmation email will be sent after checkout.</p>
+                <p className="text-sm text-black mt-1 text-left">
+                  A confirmation email will be sent after checkout.
+                </p>
               </div>
               <div>
                 <input
@@ -123,13 +137,18 @@ const CheckoutPage: React.FC = () => {
                   placeholder="Phone Number"
                   className="border border-gray-300 text-black rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black font-bold"
                 />
-                <p className="text-sm text-black mt-1 text-left">A carrier might contact you to confirm delivery.</p>
+                <p className="text-sm text-black mt-1 text-left">
+                  A carrier might contact you to confirm delivery.
+                </p>
               </div>
             </div>
+           
+
+        
 
             {/* What's your PAN? */}
             <div className="text-left">
-              <h3 className="text-2xl font-semibold mb-4 mt-8">What's your PAN?</h3>
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Whats your PAN?</h3>
             </div>
             <div>
               <input
@@ -218,27 +237,36 @@ const CheckoutPage: React.FC = () => {
 
             {/* Product Details */}
             <div className="flex items-start mt-6">
-              <img
-                src="/images/cart1.jpg"
-                alt="Nike Product"
-                className="w-20 h-20 object-cover mr-4"
-              />
+           
+
+<Image
+                  src="/images/cart1.jpg"
+                  alt="Nike Product"
+                  width={80} // w-20 corresponds to 80px
+                  height={80} // h-20 corresponds to 80px
+                  className="w-20 h-20 object-cover mr-4"
+                />
+
               <div>
                 <p className="font-semibold text-gray-800">Nike Dri-FIT ADV TechKnit Ultra</p>
-                <p className="text-gray-500 text-sm mt-1">Men's Short-Sleeve Running Top</p>
+                <p className="text-gray-500 text-sm mt-1">Mens Short-Sleeve Running Top</p>
                 <p className="text-gray-500 text-sm mt-1">Qty: 1</p>
                 <p className="text-gray-500 text-sm mt-1">₹ 3,895.00</p>
               </div>
             </div>
             <div className="flex items-start mt-6">
-              <img
-                src="/images/nike3.png"
-                alt="Nike Product"
-                className="w-20 h-20 object-cover mr-4"
-              />
+            
+              <Image
+                  src="/images/nike3.png"
+                  alt="Nike Product"
+                  width={80} // w-20 corresponds to 80px
+                  height={80} // h-20 corresponds to 80px
+                  className="w-20 h-20 object-cover mr-4"
+                />
+              
               <div>
                 <p className="font-semibold text-gray-800">Nike Air Max 97 SE</p>
-                <p className="text-gray-500 text-sm mt-1">Men's Shoes</p>
+                <p className="text-gray-500 text-sm mt-1">Mens Shoes</p>
                 <p className="text-gray-500 text-sm mt-1">Qty: 1</p>
                 <p className="text-gray-500 text-sm mt-1">₹ 16,995.00</p>
               </div>

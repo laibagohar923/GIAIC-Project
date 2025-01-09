@@ -1,13 +1,19 @@
-import React from "react";
+"use client";
 
+import React from "react";
+import Image from "next/image";
 const LoginForm = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-        <img
+
+
+        <Image
           src="/images/logonike.jpg"
-          alt="Nike Logo"
-          className="h-20 mx-auto mb-4"
+          alt="Nike Product"
+          width={90} 
+          height={90} 
+          className="mx-auto w-17"
         />
         <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
           YOUR ACCOUNT FOR <br></br>EVERYTHING <br></br> NIKE
@@ -45,10 +51,10 @@ const LoginForm = () => {
               Keep me signed in
             </label>
             <a href="#" className="text-sm text-gray-400 hover:underline">
-              Forgot your password?
-            </a>
+  Forgot your password?
+</a>
           </div>
-          <p className="text-gray-400 text-sm text-center mt-6 ">By logging in, you agree to Nike's Privacy Policy <br></br> and Terms  of Use</p>
+          <p className="text-gray-400 text-sm text-center mt-6 ">By logging in, you agree to Nikes Privacy Policy <br></br> and Terms  of Use</p>
           <button
             type="submit"
             className="w-full py-2 px-4 bg-black text-white rounded-md hover:bg-gray-400 transition duration-200 mt-6"

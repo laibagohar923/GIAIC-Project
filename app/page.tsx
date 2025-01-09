@@ -1,4 +1,4 @@
-
+"use client";
 
 
 
@@ -19,11 +19,14 @@ const HomePage = () => {
           </span>
         </p>
 
-        <img
+        <Image
           src="/images/shoes-image.png"
-          alt="shoes-image"
-          className="cover"
+          alt="Nike Product"
+          width={10000} // w-20 corresponds to 80px
+          height={10000} // h-20 corresponds to 80px
+          className="object-cover"
         />
+
       </section>
       <div>
         <h1 className="text-center text-lg font-bold mt-6 ">First Look</h1>
@@ -47,41 +50,50 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Product Card 1 */}
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img
-                src="/images/shoes2.png"
-                alt="shoes2"
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative w-full h-48">
+                <Image
+                  src="/images/shoes2.png"
+                  alt="Nike Product"
+                  layout="fill"
+                  objectFit="cover" // Ensure image is properly scaled within the container
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold">Nike Air Max Pulse</h3>
                 <p className="text-gray-600">€180</p>
-                <p>Men's Shoes</p>
+                <p>Mens Shoes</p>
               </div>
             </div>
             {/* Product Card 2 */}
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img
-                src="/images/shoes3.png"
-                alt="shoes3"
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative w-full h-48">
+                <Image
+                  src="/images/shoes3.png"
+                  alt="Nike Product"
+                  layout="fill"
+                  objectFit="cover" // Ensure image is properly scaled within the container
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold">Nike Air Max 97</h3>
                 <p className="text-gray-600">€170</p>
-                <p>Men's Shoes</p>
+                <p>Mens Shoes</p>
               </div>
             </div>
             {/* Product Card 3 */}
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img
-                src="/images/shoes4.png"
-                alt="shoes4"
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative w-full h-48">
+                <Image
+                  src="/images/shoes4.png"
+                  alt="Nike Product"
+                  layout="fill"
+                  objectFit="cover" // Ensure image is properly scaled within the container
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold">Nike Air Max 270</h3>
                 <p className="text-gray-600">€160</p>
-                <p>Men's Shoes</p>
+                <p>Mens Shoes</p>
               </div>
             </div>
           </div>
@@ -91,11 +103,15 @@ const HomePage = () => {
       {/* Featured Section */}
 
       <div>
-        <img
+        <Image
           src="/images/featured.jpeg"
           alt="Featured"
-          className="mx-auto rounded-lg"
+          layout="responsive"
+          width={500} // Ratio set karne ke liye
+          height={300}
+          className="rounded-lg"
         />
+
         <h2 className="text-center font-bold  text-5xl mt-9">STEP INTO WHAT FEELS GOOD</h2>
         <p className="mt-4 text-gray-600 text-center">
           Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse <br></br>
@@ -116,56 +132,70 @@ const HomePage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Product 1 */}
               <div className="shadow-md rounded-md overflow-hidden">
-                <img
+
+                <Image
                   src="/images/pic2.png"
-                  alt="Pic2"
-                  className="w-full h-64 object-cover"
+                  alt="Featured"
+                  layout="responsive"
+                  width={100} // Ratio set karne ke liye
+                  height={64}
+                  className="object-cover"
                 />
+
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold text-left">Nike Dri-FIT ADV Techknit </h3>
-                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-left">Mens Short-Sleeve Running Top</p>
                   <p className="text-black font-bold ">₹ 2,995</p>
                 </div>
               </div>
 
               {/* Product 2 */}
               <div className="shadow-md rounded-md overflow-hidden">
-                <img
+                <Image
                   src="/images/pic1.png"
-                  alt="pic1"
-                  className="w-full h-64 object-cover"
+                  alt="Featured"
+                  layout="responsive"
+                  width={100} // Ratio set karne ke liye
+                  height={64}
+                  className="object-cover"
                 />
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">Nike Dri-FIT Challenger</h3>
-                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-left">Mens Short-Sleeve Running Top</p>
                   <p className="text-black font-bold ">₹ 2,492</p>
                 </div>
               </div>
 
               {/* Product 3 */}
               <div className="shadow-md rounded-md overflow-hidden">
-                <img
+                <Image
                   src="/images/pic3.png"
-                  alt="Pic 3"
-                  className="w-full h-64 object-cover"
+                  alt="Featured"
+                  layout="responsive"
+                  width={100} // Ratio set karne ke liye
+                  height={64}
+                  className="object-cover"
                 />
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">Nike Dri-FIT ADV Division</h3>
-                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-left">Mens Short-Sleeve Running Top</p>
                   <p className="text-black font-bold ">₹ 5295</p>
                 </div>
               </div>
 
               {/* Product 4 */}
               <div className="shadow-md rounded-md overflow-hidden">
-                <img
+                <Image
                   src="/images/pic4.png"
-                  alt="Pic4 4"
-                  className="w-full h-64 object-cover"
+                  alt="Featured"
+                  layout="responsive"
+                  width={100} // Ratio set karne ke liye
+                  height={64}
+                  className="object-cover"
                 />
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">Nike Fast</h3>
-                  <p className="text-left">Men's Short-Sleeve Running Top</p>
+                  <p className="text-left">Mens Short-Sleeve Running Top</p>
                   <p className="text-black font-bold ">₹ 3795</p>
                 </div>
               </div>
@@ -177,26 +207,30 @@ const HomePage = () => {
 
         {/* Essentials Section */}
 
-        <h2 className="text-3xl font-bold text-left mt-20">Don't Miss</h2>
+        <h2 className="text-3xl font-bold text-left mt-20">Dont Miss</h2>
         <section className="relative w-full h-[500px] md:h-[700px] bg-gray-200 overflow-hidden">
-          <img
+
+          <Image
             src="/images/long.png"
-            alt="Main Showcase"
-            className="w-full h-full object-cover"
+            alt="Featured"
+            layout="responsive"
+            width={100} // Ratio set karne ke liye
+            height={100}
+            className="object-cover"
           />
         </section>
         <div>
           <h2 className="text-center font-bold  text-5xl mt-9">
-          FLIGHT ESSENTIALS
+            FLIGHT ESSENTIALS
           </h2>
           <p className="text-black   mb-6 text-center">
             Your built-to-last, all-week wears – but with style only Jordan Brand can deliver.
           </p>
           <div className="flex justify-center mt-6">
-          <button className="bg-black  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
-            Find Your Shoes
-          </button>
-        </div>
+            <button className="bg-black  text-white px-6 py-3 rounded-full bg-black-500 shadow-lg shadow-cyan-500/50">
+              Find Your Shoes
+            </button>
+          </div>
         </div>
 
         {/* Essentials Grid */}
@@ -206,37 +240,48 @@ const HomePage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Men's */}
               <div className="relative overflow-hidden rounded-lg shadow-md">
-                <img
+                <Image
                   src="/images/essentials-men.png"
-                  alt="Men's Essentials"
-                  className="w-full h-90 object-cover"
+                  alt="Featured"
+                  layout="responsive"
+                  width={100} // Ratio set karne ke liye
+                  height={90}
+                  className="object-cover"
                 />
                 <button className="absolute bottom-4 left-4 bg-white text-black px-4 py-2 rounded-lg shadow-md">
-                  Men's
+                  Mens
                 </button>
               </div>
 
               {/* Women's */}
               <div className="relative overflow-hidden rounded-lg shadow-md">
-                <img
+
+
+                <Image
                   src="/images/essentials-women.png"
-                  alt="Women's Essentials"
-                  className="w-full h-90 object-cover"
+                  alt="Featured"
+                  layout="responsive"
+                  width={100} // Ratio set karne ke liye
+                  height={90}
+                  className="object-cover"
                 />
                 <button className="absolute bottom-4 left-4 bg-white text-black px-4 py-2 rounded-lg shadow-md">
-                  Women's
+                  Womens
                 </button>
               </div>
 
               {/* Kids' */}
               <div className="relative overflow-hidden rounded-lg shadow-md">
-                <img
+                <Image
                   src="/images/essentials-kids.png"
-                  alt="Kids' Essentials"
-                  className="w-full h-90 object-cover"
+                  alt="Featured"
+                  layout="responsive"
+                  width={100} // Ratio set karne ke liye
+                  height={90}
+                  className="object-cover"
                 />
                 <button className="absolute bottom-4 left-4 bg-white text-black px-4 py-2 rounded-lg shadow-md">
-                  Kids'
+                  Kids
                 </button>
               </div>
             </div>
@@ -284,9 +329,9 @@ const HomePage = () => {
               <h3 className="text-lg font-bold">Kids</h3>
               <ul className="text-gray-600 space-y-2">
                 <li>Infant & Toddler Shoes</li>
-                <li>Kids' Shoes</li>
-                <li>Kids' Jordan Shoes</li>
-                <li>Kids' Basketball Shoes</li>
+                <li>Kids Shoes</li>
+                <li>Kids Jordan Shoes</li>
+                <li>Kids Basketball Shoes</li>
               </ul>
             </div>
           </div>
