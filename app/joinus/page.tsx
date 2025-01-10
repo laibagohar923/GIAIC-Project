@@ -19,7 +19,7 @@ const RegisterForm: React.FC = () => {
           />
           <h1 className="text-2xl font-bold mt-4 text-black">BECOME A NIKE MEMBER</h1>
           <p className=" text-sm text-gray-400 mb-8 mt-6 text-balance">
-            Create your Nike Member profile and get first <br></br> access to the very best of Nike products, inspiration <br></br> and community.
+            Create your Nike Member profile and get first  access to <br></br> the very best of Nike products, inspiration  and community.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ const RegisterForm: React.FC = () => {
             placeholder="Date of Birth"
             className="w-full px-4 py-2 border text-gray-400 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
           />
-
+           Date of Birth 
           <select
             className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 text-gray-400 focus:ring-black focus:border-transparent"
           >

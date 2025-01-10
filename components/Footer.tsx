@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 const Footer = () => {
@@ -11,11 +9,31 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Get Help</h3>
             <ul className="space-y-2">
-              <li><a href="/order-status" className="hover:underline">Order Status</a></li>
-              <li><a href="/delivery" className="hover:underline">Delivery</a></li>
-              <li><a href="/returns" className="hover:underline">Returns</a></li>
-              <li><a href="/payment-options" className="hover:underline">Payment Options</a></li>
-              <li><a href="/contact-us" className="hover:underline">Contact Us</a></li>
+              <li>
+                <a href="/order-status" className="hover:underline">
+                  Order Status
+                </a>
+              </li>
+              <li>
+                <a href="/delivery" className="hover:underline">
+                  Delivery
+                </a>
+              </li>
+              <li>
+                <a href="/returns" className="hover:underline">
+                  Returns
+                </a>
+              </li>
+              <li>
+                <a href="/payment-options" className="hover:underline">
+                  Payment Options
+                </a>
+              </li>
+              <li>
+                <a href="/contact-us" className="hover:underline">
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -23,10 +41,26 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">About Nike</h3>
             <ul className="space-y-2">
-              <li><a href="/news" className="hover:underline">News</a></li>
-              <li><a href="/careers" className="hover:underline">Careers</a></li>
-              <li><a href="/investors" className="hover:underline">Investors</a></li>
-              <li><a href="/sustainability" className="hover:underline">Sustainability</a></li>
+              <li>
+                <a href="/news" className="hover:underline">
+                  News
+                </a>
+              </li>
+              <li>
+                <a href="/careers" className="hover:underline">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="/investors" className="hover:underline">
+                  Investors
+                </a>
+              </li>
+              <li>
+                <a href="/sustainability" className="hover:underline">
+                  Sustainability
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -34,9 +68,21 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Become a Member</h3>
             <ul className="space-y-2">
-              <li><a href="/sign-up" className="hover:underline">Sign Up for Email</a></li>
-              <li><a href="/feedback" className="hover:underline">Send Us Feedback</a></li>
-              <li><a href="/student-discounts" className="hover:underline">Student Discounts</a></li>
+              <li>
+                <a href="/sign-up" className="hover:underline">
+                  Sign Up for Email
+                </a>
+              </li>
+              <li>
+                <a href="/feedback" className="hover:underline">
+                  Send Us Feedback
+                </a>
+              </li>
+              <li>
+                <a href="/student-discounts" className="hover:underline">
+                  Student Discounts
+                </a>
+              </li>
             </ul>
           </div>
 

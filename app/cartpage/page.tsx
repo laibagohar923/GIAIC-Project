@@ -11,8 +11,8 @@ const CartPage: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-full">
       {/* Free Delivery Banner */}
-      <div className="container mx-auto px-6 text-left mt-8 text-sm text-gray-800 bg-gray-200 py-5">
-        <span className="font-semibold">Free Delivery <br /></span> 
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-left mt-6 sm:mt-8 text-sm text-gray-800 bg-gray-200 py-4 sm:py-5">
+        <span className="font-semibold">Free Delivery <br /></span>
         Applies to orders of over ₹14,000.00 or more.{" "}
         <a href="#" className="text-black font-bold underline">
           View details
@@ -20,35 +20,31 @@ const CartPage: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Cart Items Section */}
-          <div className="md:col-span-2">
-            <h2 className="text-2xl font-semibold mb-6">Bag</h2>
+          <div className="lg:col-span-2">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Bag</h2>
 
             {/* Product Item 1 */}
-            <div className="flex items-center justify-between border-b pb-4 mb-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b pb-4 mb-6 gap-4">
               <div className="flex gap-4">
-              <Image
-  src="/images/cart1.jpg"
-  alt="Nike Product"
-  width={100}
-  height={100}
-  className="w-20 h-20 object-contain rounded-md"
-/>
+                <Image
+                  src="/images/cart1.jpg"
+                  alt="Nike Product"
+                  width={100}
+                  height={100}
+                  className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md"
+                />
 
                 <div>
                   <p className="font-semibold text-gray-800">
                     Nike Dri-FIT ADV TechKnit Ultra
                   </p>
-                  <p className="text-gray-500 text-sm mt-3">
-                    Mens Short-Sleeve Running Top
-                  </p>
-                  <p className="text-gray-500 text-sm mt-3">
-                    Ashen Slate/Cobalt Bliss
-                  </p>
-                  <div className="text-sm font-medium mt-4">
-                    Size: <span className="font-bold">L</span> &nbsp;&nbsp; 
+                  <p className="text-gray-500 text-sm mt-2">Mens Short-Sleeve Running Top</p>
+                  <p className="text-gray-500 text-sm mt-1">Ashen Slate/Cobalt Bliss</p>
+                  <div className="text-sm font-medium mt-3">
+                    Size: <span className="font-bold">L</span> &nbsp;&nbsp;
                     Quantity: <span className="font-bold">1</span>
                   </div>
                 </div>
@@ -56,7 +52,7 @@ const CartPage: React.FC = () => {
               <div className="text-gray-800 font-semibold">MRP: ₹ 3,895.00</div>
             </div>
             {/* Icons Section */}
-            <div className="flex gap-4 items-center justify-start ml-24 mb-6">
+            <div className="flex gap-4 items-center justify-start mb-6">
               <button className="text-gray-500 hover:text-red-500">
                 <FiHeart className="w-6 h-6" />
               </button>
@@ -66,26 +62,26 @@ const CartPage: React.FC = () => {
             </div>
 
             {/* Product Item 2 */}
-            <div className="flex items-center justify-between border-b pb-4 mb-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b pb-4 mb-6 gap-4">
               <div className="flex gap-4">
-              <Image
-  src="/images/nike3.png"
-  alt="Nike Product"
-  width={100}
-  height={100}
-  className="w-20 h-20 object-contain rounded-md"
-/>
+                <Image
+                  src="/images/nike3.png"
+                  alt="Nike Product"
+                  width={100}
+                  height={100}
+                  className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md"
+                />
 
                 <div>
                   <p className="font-semibold text-gray-800">
                     Nike Air Max 97 SE
                   </p>
-                  <p className="text-gray-500 text-sm mt-3">Mens Shoes</p>
-                  <p className="text-gray-500 text-sm mt-3">
+                  <p className="text-gray-500 text-sm mt-2">Mens Shoes</p>
+                  <p className="text-gray-500 text-sm mt-1">
                     Flat Pewter/Light Bone/Black/White
                   </p>
-                  <div className="text-sm font-medium mt-4">
-                    Size: <span className="font-bold">L</span> &nbsp;&nbsp; 
+                  <div className="text-sm font-medium mt-3">
+                    Size: <span className="font-bold">L</span> &nbsp;&nbsp;
                     Quantity: <span className="font-bold">1</span>
                   </div>
                 </div>
@@ -93,7 +89,7 @@ const CartPage: React.FC = () => {
               <div className="text-gray-800 font-semibold">MRP: ₹ 16,995.00</div>
             </div>
             {/* Icons Section */}
-            <div className="flex gap-4 items-center justify-start ml-24 mb-6">
+            <div className="flex gap-4 items-center justify-start mb-6">
               <button className="text-gray-500 hover:text-red-500">
                 <FiHeart className="w-6 h-6" />
               </button>
@@ -105,8 +101,8 @@ const CartPage: React.FC = () => {
 
           {/* Summary Section */}
           <div>
-            <h2 className="text-2xl font-semibold mb-6">Summary</h2>
-            <div className="bg-white p-6 rounded shadow-md">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Summary</h2>
+            <div className="bg-white p-4 sm:p-6 rounded shadow-md">
               <div className="flex justify-between mb-4">
                 <p className="text-gray-600">Subtotal</p>
                 <p className="text-gray-800 font-semibold">₹ 20,890.00</p>
