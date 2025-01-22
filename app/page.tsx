@@ -4,8 +4,42 @@
 
 import React from "react";
 import Image from "next/image";
+import { client } from "@/sanity/lib/client"
+import { allproducts } from "@/sanity/lib/queries"
+import { useEffect, useState } from "react"
+import { product } from "@/types/porducts"
+// import from "next/image"
+
 
 const HomePage = () => {
+
+ 
+  const [products, setProducts] = useState<product[]>([]);
+
+useEffect(() => {
+  async function fetchProducts() {
+    try {
+      const fetchedProducts: product[] = await client.fetch(allproducts);
+      setProducts(fetchedProducts);
+      console.log("Fetched products:", fetchedProducts); // For debugging
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  }
+
+  fetchProducts();
+}, []);
+
+<section>
+  <div className="max-w-6xl mx-auto px-4 py-8">
+    {products.map((product) => (
+      <div key={product._id}>
+        {product.productName}
+      </div>
+    ))}
+  </div>
+</section>
+
   return (
     <div>
       {/* Hero Section */}
@@ -45,14 +79,26 @@ const HomePage = () => {
       </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+      {/* 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl  font-bold mb-8 text-black ">
             Best of Air Max
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Product Card 1 */}
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> */}
+      {/* Product Card 1 */}
+      {/* <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <div className="relative w-full h-48">
                 <Image
                   src="/images/shoes2.png"
@@ -67,9 +113,9 @@ const HomePage = () => {
                 <p className="text-gray-600">€180</p>
                 <p className="text-black">Mens Shoes</p>
               </div>
-            </div>
-            {/* Product Card 2 */}
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            </div> */}
+      {/* Product Card 2 */}
+      {/* <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <div className="relative w-full h-48">
                 <Image
                   src="/images/shoes3.png"
@@ -84,9 +130,9 @@ const HomePage = () => {
                 <p className="text-gray-600">€170</p>
                 <p className="text-black">Mens Shoes</p>
               </div>
-            </div>
-            {/* Product Card 3 */}
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            </div> */}
+      {/* Product Card 3 */}
+      {/* <div className="bg-white shadow-md rounded-lg overflow-hidden">
               <div className="relative w-full h-48">
                 <Image
                   src="/images/shoes4.png"
@@ -104,7 +150,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 
