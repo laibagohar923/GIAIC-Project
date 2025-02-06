@@ -10,4 +10,9 @@ export interface product {
   };
   price : number;
   descripition? : string;
+  slug : {
+    _type : "slug"
+    current: string;
+  };
+  inventory : number;
 }

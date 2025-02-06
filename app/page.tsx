@@ -7,40 +7,46 @@ import Image from "next/image";
 import { client } from "@/sanity/lib/client"
 import { allproducts } from "@/sanity/lib/queries"
 import { useEffect, useState } from "react"
-import { product } from "@/types/porducts"
+import { product } from "@/types/products"
+import { urlFor } from "@/sanity/lib/image";
+import Link from "next/link";
+import { addToCart } from "./actions/action";
+import Swal from "sweetalert2";
+
 // import from "next/image"
 
 
 const HomePage = () => {
 
- 
-  const [products, setProducts] = useState<product[]>([]);
 
-useEffect(() => {
-  async function fetchProducts() {
-    try {
-      const fetchedProducts: product[] = await client.fetch(allproducts);
-      setProducts(fetchedProducts);
-      console.log("Fetched products:", fetchedProducts); // For debugging
-    } catch (error) {
-      console.error("Error fetching products:", error);
+  const [product, setProduct] = useState<product[]>([])
+
+  useEffect(() => {
+
+    async function fetchproduct() {
+      const fetchProduct: product[] = await client.fetch(allproducts)
+      setProduct(fetchProduct)
     }
+    fetchproduct()
+  }, [])
+
+  const handleAddToCart = (e: React.MouseEvent, product: product) => {
+    e.preventDefault()
+    Swal.fire({
+      position: "top-right",
+      icon: "success",
+      title: `${product.productName} added to cart`,
+      showConfirmButton: false,
+      timer: 1000
+    });
+    
+    addToCart(product)
+
   }
 
-  fetchProducts();
-}, []);
-
-<section>
-  <div className="max-w-6xl mx-auto px-4 py-8">
-    {products.map((product) => (
-      <div key={product._id}>
-        {product.productName}
-      </div>
-    ))}
-  </div>
-</section>
 
   return (
+
     <div>
       {/* Hero Section */}
       <section>
@@ -77,80 +83,52 @@ useEffect(() => {
         </div>
 
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl  font-bold mb-8 text-black ">
-            Best of Air Max
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> */}
-      {/* Product Card 1 */}
-      {/* <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <div className="relative w-full h-48">
-                <Image
-                  src="/images/shoes2.png"
-                  alt="Nike Air Max Pulse"
-                  layout="fill"
-                  objectFit="cover"
-                  className="hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-black">Nike Air Max Pulse</h3>
-                <p className="text-gray-600">€180</p>
-                <p className="text-black">Mens Shoes</p>
-              </div>
-            </div> */}
-      {/* Product Card 2 */}
-      {/* <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <div className="relative w-full h-48">
-                <Image
-                  src="/images/shoes3.png"
-                  alt="Nike Air Max 97"
-                  layout="fill"
-                  objectFit="cover"
-                  className="hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-black">Nike Air Max 97</h3>
-                <p className="text-gray-600">€170</p>
-                <p className="text-black">Mens Shoes</p>
-              </div>
-            </div> */}
-      {/* Product Card 3 */}
-      {/* <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <div className="relative w-full h-48">
-                <Image
-                  src="/images/shoes4.png"
-                  alt="Nike Air Max 270"
-                  layout="fill"
-                  objectFit="cover"
-                  className="hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-black">Nike Air Max 270</h3>
-                <p className="text-gray-600">€160</p>
-                <p className="text-black">Mens Shoes</p>
-              </div>
+<section className="py-16">
+  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <h2 className="text-4xl font-bold text-center mb-10 text-gray-900">
+      Our Latest Shoes
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {product.map((product) => (
+        <div
+          key={product._id}
+          className="bg-white border rounded-xl shadow-lg p-5 hover:shadow-xl transition-transform duration-300 hover:scale-105"
+        >
+          <Link href={`/product/${product.slug.current}`} className="block">
+            {product.image && (
+              <Image
+                src={urlFor(product.image).url()}
+                alt={product.productName}
+                width={300}
+                height={300}
+                className="w-full h-56 object-cover rounded-lg"
+              />
+            )}
+            <div className="mt-4">
+              <h2 className="text-lg font-semibold text-gray-800">
+                {product.productName}
+              </h2>
+              <p className="text-gray-500 mt-1">
+                {product.price ? `$${product.price}` : "Price not available"}
+              </p>
+              <button
+                className="mt-4 w-full bg-gradient-to-r from-black to-gray-900 text-white font-semibold py-2 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+                onClick={(e) => handleAddToCart(e, product)}
+              >
+                Add To Cart
+              </button>
             </div>
-          </div>
+          </Link>
         </div>
-      </section> */}
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
 
 
@@ -162,7 +140,7 @@ useEffect(() => {
 
       {/* Featured Section */}
 
-      <div>
+      < div >
         <Image
           src="/images/featured.jpeg"
           alt="Featured"
@@ -182,7 +160,7 @@ useEffect(() => {
             Find Your Shoes
           </button>
         </div>
-      </div>
+      </div >
       <div>
 
         <h1 className="text-3xl md:text-4xl font-bold mt-8">Gear Up</h1>
@@ -399,7 +377,7 @@ useEffect(() => {
         </div>
       </section>
 
-    </div>
+    </div >
   );
 };
 
